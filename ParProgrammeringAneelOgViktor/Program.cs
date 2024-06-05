@@ -5,13 +5,17 @@
         static void Main(string[] args)
         {
             var harry = new Character("harry", "griffindor");
-            harry.Inventory.Add(new Items("phoenix feather", "wand"));
-            harry.Inventory.Add(new Items("headwig", "Pet"));
 
             var magicshop = new MagicShop();
-            magicshop.ShopMenu();
+            
             Console.WriteLine(harry.FullInfo);
+            harry.Inventory.Add(magicshop.BuyItem(magicshop.ShopMenu()));
+            Console.WriteLine(harry.FullInfo);
+            
+            harry.Trylleformel();
+            magicshop.ShopMenu();
             Console.ReadLine();
+            
         }
     }
 }

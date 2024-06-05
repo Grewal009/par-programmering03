@@ -16,12 +16,12 @@ namespace ParProgrammeringAneelOgViktor
         {
             Inventory = new List<Items>()
             {
-                    new Items("føniks", "wand"),
-                    new Items("unikorn", "wand"),
-                    new Items("Troll", "wand"),
-                    new Items("ugle", "pet"),
-                    new Items("rotte", "pet"),
-                    new Items("katt", "pet")
+                new Items("føniks", "wand"),
+                new Items("unikorn", "wand"),
+                new Items("Troll", "wand"),
+                new Items("ugle", "pet"),
+                new Items("rotte", "pet"),
+                new Items("katt", "pet")
             };
         }
 
@@ -43,21 +43,33 @@ namespace ParProgrammeringAneelOgViktor
                 Console.Write("Press the number of the item you wanna buy: ");
                 var userInput = Console.ReadLine();
                 isValidNumber = int.TryParse(userInput, out output);
-                Console.WriteLine(output);
-            } while (!isValidNumber || output <= Inventory.Count || output >= 0);
+                //Console.WriteLine(output);
+            } while (!isValidNumber || output >= Inventory.Count || output < 0); //always check opposite conditions
 
             return output;
         }
 
-        //public Items BuyItem(int choice)
-        //{
-        //    switch (choice)
-        //    {
-        //        case 1:
-        //            return Inventory[choice];
-        //            break;
-        //        case 2:
-        //    }
-        //}
+        public Items BuyItem(int choice)
+        {
+            Items output = new Items();
+            switch (choice)
+            {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                    output = Inventory[choice];
+                    //Inventory.Remove(output);
+                    Inventory.RemoveAt(choice);
+                    break;
+                default:
+                    ShopMenu();
+                    break;
+            }
+
+            return output;
+        }
     }
 }

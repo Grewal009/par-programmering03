@@ -16,5 +16,9 @@ namespace ParProgrammeringAneelOgViktor
             Name = name;
             Type = type;
         }
+
+        public Items()
+        {
+        }
     }
 }
