@@ -25,29 +25,29 @@ namespace ParProgrammeringAneelOgViktor
             };
         }
 
-        //public int ShopMenu()
-        //{
-        //    var count = 0;
-        //    var isValidNumber = false;
-        //    int output;
+        public int ShopMenu()
+        {
+            var count = 0;
+            var isValidNumber = false;
+            int output;
 
-        //    Console.WriteLine("Hello what do you want to buy?");
-        //    foreach (var item in Inventory)
-        //    {
-        //        Console.WriteLine($"{count}. {item.Name} {item.Type}");
-        //        count++;
-        //    }
+            Console.WriteLine("Hello what do you want to buy?");
+            foreach (var item in Inventory)
+            {
+                Console.WriteLine($"{count}. {item.Name} {item.Type}");
+                count++;
+            }
 
-        //    do
-        //    {
-        //        Console.Write("Press the number of the item you wanna buy: ");
-        //        var userInput = Console.ReadLine();
-        //        isValidNumber = int.TryParse(userInput, out output);
-        //        Console.WriteLine(output);
-        //    } while (!isValidNumber && output >= Inventory.Count && output < 0);
+            do
+            {
+                Console.Write("Press the number of the item you wanna buy: ");
+                var userInput = Console.ReadLine();
+                isValidNumber = int.TryParse(userInput, out output);
+                Console.WriteLine(output);
+            } while (!isValidNumber || output <= Inventory.Count || output >= 0);
 
-        //    return output;
-        //}
+            return output;
+        }
 
         //public Items BuyItem(int choice)
         //{
